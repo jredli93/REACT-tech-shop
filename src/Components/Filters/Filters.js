@@ -40,7 +40,7 @@ const Filters = () => {
           min="1"
           max="5"
           name="rating"
-          class={classes.Rating}
+          className={classes.Rating}
         />
       </div>
       <div className={classes.FormBlock}>

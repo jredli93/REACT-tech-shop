@@ -1,0 +1,66 @@
+@import '../../sass/mixins';
+@import '../../sass/variables';
+
+.Product {
+  -webkit-box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+  -moz-box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+  box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+  background: $white;
+  flex: 0 0 calc(33% - 0.6rem);
+  margin-top: 1.2rem;
+  padding: 2.2rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0px 1px 10px 1px rgba(92, 92, 92, 1);
+    -moz-box-shadow: 0px 1px 10px 1px rgba(92, 92, 92, 1);
+    box-shadow: 0px 1px 10px 1px rgba(92, 92, 92, 1);
+  }
+
+  .Overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    opacity: 0.8;
+    height: 0;
+    transition: all 0.2s ease;
+  }
+
+  &:hover .Overlay {
+    height: 100%;
+  }
+
+  .Link {
+    color: $dark;
+    font-size: 1.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 0.1rem 1.1rem;
+    background: transparent;
+    border: 0.1rem solid $dark;
+    cursor: pointer;
+  }
+
+  .ImgContainer {
+    .Img {
+      width: 100%;
+    }
+  }
+
+  .Info {
+    display: flex;
+    justify-content: space-between;
+  }
+}

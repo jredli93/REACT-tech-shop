@@ -1,64 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './ProductList.module.scss';
-import image from '../../assets/images/laptop.png';
+import SingleProduct from '../../Components/SingleProduct/SingleProduct';
+import axios from '../../axios/axiosProducts';
+import Spinner from '../UI/Spinner/Spinner';
 
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get('/articles.json')
+      .then(res => {
+        const allProducts = [];
+        for (let key in res.data) {
+          allProducts.push(res.data[key]);
+        }
+        setProducts(allProducts);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
+  const allProducts = products.map(product => (
+    <SingleProduct key={product._id} product={product} />
+  ));
+
   return (
     <div className={classes.Container}>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
-      <div className={classes.Product}>
-        <div className={classes.ImgContainer}>
-          <img className={classes.Img} src={image} alt="" />
-        </div>
-        <div className={classes.Info}>
-          <span className={classes.Name}>Apple IPhone 11 Pro</span>
-          <span className={classes.Price}>$999.99</span>
-        </div>
-      </div>
+      {loading === false ? allProducts : <Spinner />}
     </div>
   );
 };
