@@ -1,0 +1,42 @@
+@import '../../sass/mixins';
+@import '../../sass/variables';
+
+.Container {
+  width: 70vw;
+  display: flex;
+  height: 4rem;
+  justify-content: space-evenly;
+  margin: 1.6rem 0;
+  align-items: center;
+
+  .FormBlock {
+    @include range;
+    @include checkbox;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+    .Search {
+      border: none;
+      border-bottom: 0.1rem solid black;
+      outline: none;
+      padding: 0.3rem 0.4rem;
+      color: $dark;
+      font-size: 1.1rem;
+
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+
+    .Category {
+      border: none;
+      border-bottom: 0.1rem solid black;
+      padding: 0.2rem 1.7rem;
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.Container {
+  background: $white;
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  .Navbar {
+    @include center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+
+    .Logo {
+      font-weight: weight(medium);
+      span {
+        text-transform: capitalize;
+        color: $light-blue;
+      }
+    }
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        margin-left: 1rem;
+        transition: all 0.2s linear;
+
+        &:hover {
+          transform: translateY(-1px);
+        }
+
+        a {
+          font-size: 1.3rem;
+          font-weight: weight(medium);
+          text-decoration: none;
+          color: $light-blue;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

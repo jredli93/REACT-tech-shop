@@ -1,0 +1,24 @@
+@import '../../sass/mixins';
+@import '../../sass/variables';
+
+.Container {
+  padding: 5rem 0;
+  box-shadow: 0 3px 5px 5px rgba(0, 0, 0, 0.2);
+  background: $white;
+  .Center {
+    @include center;
+
+    .Heading {
+      text-align: center;
+      font-size: 1.4rem;
+      color: $light-blue;
+
+      .Subtitle {
+        color: $dark;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

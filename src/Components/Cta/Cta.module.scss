@@ -1,0 +1,74 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.Container {
+  height: 60vh;
+
+  .Center {
+    @include center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .Arrow {
+      color: $dark;
+      bottom: 15px;
+      position: absolute;
+      font-size: 1.7rem;
+    }
+    .Arrow {
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
+    }
+    .Arrow {
+      -webkit-animation: mover 1s infinite alternate;
+      animation: mover 1s infinite alternate;
+    }
+    @-webkit-keyframes mover {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+    @keyframes mover {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .Cta {
+      h3 {
+        margin-top: 1rem;
+      }
+
+      .CtaButton {
+        border: 2px solid black;
+        padding: 0.5rem 2rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        background: $light-blue;
+        font-weight: 700;
+        transition: all 0.2s linear;
+
+        &:hover {
+          transform: translateY(-2px);
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .ImgContainer {
+      .Img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+// Colors
+$light-grey: hsl(180, 14%, 96%);
+$white: #fcfcfc;
+$turquoise: #90eee1;
+$light-blue: #55b3f3;
+$blue: #6356e5;
+$dark: #1e1e1e;
+
+// Styles
+$font-weight: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+  'extra-bold': 900,
+);
+
+@function weight($name) {
+  @return map-get($font-weight, $name);
+}
