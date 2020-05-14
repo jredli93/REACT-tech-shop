@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Products.module.scss';
-import Filters from '../../Components/Filters/Filters';
-import ProductList from '../../Components/ProductList/ProductList';
+import Filters from '../Filters/Filters';
+import ProductList from '../ProductList/ProductList';
 
 const Products = () => {
   return (

@@ -1,16 +1,21 @@
 import React from 'react';
 import './App.scss';
 import Navbar from './Components/Navbar/Navbar';
-import Cta from './Components/Cta/Cta';
 import Footer from './Components/Footer/Footer';
-import Products from './Containers/Products/Products';
+import About from './Containers/About/About';
+import Home from './Containers/Home/Home';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Navbar />
-      <Cta />
-      <Products />
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route path="/" exact component={Home} />
+        <Route path="/product/:id" exact component={ProductDetails} />
+      </Switch>
       <Footer />
     </>
   );

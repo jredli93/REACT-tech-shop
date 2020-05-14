@@ -1,0 +1,83 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.Container {
+  @include center;
+
+  max-width: 70vw;
+  display: flex;
+  margin: 5rem auto;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
+  .Deal {
+    position: absolute;
+    top: -18px;
+    right: -20px;
+    padding: 1rem;
+    border-radius: 5%;
+    background: indianred;
+    color: $white;
+  }
+
+  .Info {
+    flex: 0 0 45%;
+    padding: 1rem;
+    background: white;
+    -webkit-box-shadow: 0px 2px 29px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 29px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 29px -6px rgba(0, 0, 0, 0.75);
+    border-radius: 0.2rem;
+  }
+
+  .Title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: weight(extra-bold);
+  }
+
+  .Description {
+    margin-top: 1.5rem;
+
+    ul {
+      font-size: 1.2rem;
+      list-style-type: none;
+
+      li {
+        margin-top: 0.8rem;
+      }
+    }
+  }
+
+  .Additional {
+    margin-top: 1rem;
+
+    span {
+      border: 1px solid $dark;
+      padding: 0.2rem 0.6rem;
+      background: transparent;
+      color: $dark;
+      margin-right: 1rem;
+    }
+  }
+
+  .Button {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    width: 100%;
+    outline: none;
+    text-transform: capitalize;
+    color: $white;
+    border: none;
+    background: $blue;
+    font-size: 1.1rem;
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: $light-blue;
+      cursor: pointer;
+    }
+  }
+}
