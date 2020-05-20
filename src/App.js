@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
-import About from './Containers/About/About';
+import Cart from './Containers/Cart/Cart';
 import Home from './Containers/Home/Home';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import { Route, Switch } from 'react-router-dom';
@@ -12,7 +12,7 @@ function App() {
     <>
       <Navbar />
       <Switch>
-        <Route path="/about" component={About} />
+        <Route path="/Cart" component={Cart} />
         <Route path="/" exact component={Home} />
         <Route path="/product/:id" exact component={ProductDetails} />
       </Switch>

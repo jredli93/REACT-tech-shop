@@ -1,0 +1,93 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.Container {
+  @include center;
+
+  .Heading {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  hr {
+    margin-top: 1rem;
+  }
+
+  .SingleItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $white;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+    -moz-box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+    box-shadow: 0px 1px 26px -11px rgba(92, 92, 92, 1);
+
+    .ImgContainer {
+      width: 100px;
+
+      .Img {
+        width: 100%;
+      }
+    }
+
+    .Amount {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        color: $light-blue;
+      }
+
+      svg:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  hr {
+    background: $dark;
+    height: 2px;
+  }
+
+  .Total {
+    display: flex;
+    justify-content: space-between;
+    color: $light-blue;
+    font-size: 1.5rem;
+  }
+
+  .Buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button {
+      margin: 0.4rem;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        -webkit-box-shadow: -1px 6px 25px -4px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: -1px 6px 25px -4px rgba(0, 0, 0, 0.75);
+        box-shadow: -1px 6px 25px -4px rgba(0, 0, 0, 0.75);
+      }
+    }
+
+    .Clear {
+      border: 2px solid $red;
+      padding: 0.5rem;
+      font-size: 1rem;
+      color: $red;
+    }
+    .Checkout {
+      border: 2px solid $light-blue;
+      padding: 0.5rem;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+  }
+}
