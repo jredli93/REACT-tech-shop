@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './SingleProduct.module.scss';
 import { Link } from 'react-router-dom';
-import image from '../../assets/images/laptop.png';
 
 const SingleProduct = ({ product }) => {
   const { image, price, title } = product;
@@ -19,6 +18,7 @@ const SingleProduct = ({ product }) => {
           Details
         </Link>
       </div>
+      <span className={classes.Deal}>Deal</span>
     </div>
   );
 };

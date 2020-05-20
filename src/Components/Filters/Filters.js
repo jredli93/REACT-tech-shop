@@ -1,13 +1,25 @@
 import React from 'react';
 import classes from './Filters.module.scss';
 
-const Filters = () => {
+const Filters = ({
+  categoryHandler,
+  priceHandler,
+  price,
+  dealHandler,
+  rating,
+  maxPrice,
+  search,
+  searchHandler,
+  ratingHandler,
+}) => {
   return (
     <div className={classes.Container}>
       <div className={classes.FormBlock}>
         <label>Search</label>
         <input
           type="text"
+          value={search}
+          onChange={searchHandler}
           placeholder="Search term"
           className={classes.Search}
         />
@@ -15,8 +27,12 @@ const Filters = () => {
 
       <div className={classes.FormBlock}>
         <label>Category</label>
-        <select className={classes.Category} name="category">
-          <option value="0">Select...</option>
+        <select
+          onChange={categoryHandler}
+          className={classes.Category}
+          name="category"
+        >
+          <option value="0">All</option>
           <option value="1">Tv</option>
           <option value="2">Phone</option>
           <option value="2">Laptop</option>
@@ -29,7 +45,9 @@ const Filters = () => {
           id="volume"
           name="volume"
           min="0"
-          max="50"
+          onChange={priceHandler}
+          value={price}
+          max={maxPrice}
           className={classes.Price}
         />
       </div>
@@ -40,12 +58,19 @@ const Filters = () => {
           min="1"
           max="5"
           name="rating"
+          value={rating}
+          onChange={ratingHandler}
           className={classes.Rating}
         />
       </div>
       <div className={classes.FormBlock}>
         <label>Deal</label>
-        <input type="checkbox" name="deal" className={classes.Deal} />
+        <input
+          type="checkbox"
+          onChange={dealHandler}
+          name="deal"
+          className={classes.Deal}
+        />
       </div>
     </div>
   );
