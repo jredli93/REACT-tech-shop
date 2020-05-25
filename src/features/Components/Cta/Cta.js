@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Cta.module.scss';
-import laptop from '../../assets/images/laptop.png';
+import laptop from '../../../assets/images/laptop.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 

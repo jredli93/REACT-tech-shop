@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
-import Cart from './Containers/Cart/Cart';
-import Home from './Containers/Home/Home';
-import ProductDetails from './Components/ProductDetails/ProductDetails';
+import Navbar from './features/Components/Navbar/Navbar';
+import Footer from './features/Components/Footer/Footer';
+import Cart from './features/Containers/Cart/Cart';
+import Home from './features/Containers/Home/Home';
+import ProductDetails from './features/Components/ProductDetails/ProductDetails';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {

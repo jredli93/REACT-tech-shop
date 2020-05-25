@@ -17,7 +17,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/cart">
-              <span className={classes.CartAmount}>5</span>
+              <span className={classes.CartAmount}></span>
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
           </li>

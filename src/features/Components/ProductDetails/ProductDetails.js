@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classes from './ProductDetails.module.scss';
-import axios from '../../axios/axiosProducts';
+import axios from '../../../axios/axiosProducts';
 import Spinner from '../UI/Spinner/Spinner';
 
 const ProductDetails = props => {

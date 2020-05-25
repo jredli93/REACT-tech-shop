@@ -1,5 +1,5 @@
-@import '../../sass/variables';
-@import '../../sass/mixins';
+@import '../../../sass/mixins';
+@import '../../../sass/variables';
 
 .Container {
   @include center;

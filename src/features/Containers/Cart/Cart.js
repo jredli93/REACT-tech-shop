@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import laptop from '../../assets/images/laptop.png';
+import laptop from '../../../assets/images/laptop.png';
 
 const Cart = () => {
   return (

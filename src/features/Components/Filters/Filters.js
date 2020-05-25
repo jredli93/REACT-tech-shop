@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Filters.module.scss';
+import classes from '../Filters/Filters.module.scss';
 
 const Filters = ({
   categoryHandler,
@@ -39,7 +39,9 @@ const Filters = ({
         </select>
       </div>
       <div className={classes.FormBlock}>
-        <label>Price</label>
+        <label>
+          Price:<b> ${price}</b>
+        </label>
         <input
           type="range"
           id="volume"
@@ -52,7 +54,9 @@ const Filters = ({
         />
       </div>
       <div className={classes.FormBlock}>
-        <label>Rating</label>
+        <label>
+          Rating:<b> {rating}</b>
+        </label>
         <input
           type="range"
           min="1"
