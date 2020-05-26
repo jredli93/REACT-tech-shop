@@ -3,8 +3,17 @@ import classes from './Navbar.module.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
+import { selectCartItems } from '../../Containers/Cart/cartSlice';
 
 const Navbar = () => {
+  // const cartItemsValue = useSelector(selectCartItems);
+  // console.log(cartItemsValue);
+  // const totalItems = cartItemsValue.reduce(
+  //   (acc, curr) => (acc += curr.amount),
+  //   0
+  // );
+
   return (
     <div className={classes.Container}>
       <div className={classes.Navbar}>
@@ -17,7 +26,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/cart">
-              <span className={classes.CartAmount}></span>
+              <span className={classes.CartAmount}>
+                {/* {totalItems > 0 ? totalItems : 0} */}
+              </span>
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
           </li>

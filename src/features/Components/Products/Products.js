@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import classes from '../Products/Products.module.scss';
 import Filters from '../Filters/Filters';
 import SingleProduct from '../../Components/SingleProduct/SingleProduct';
-import axios from '../../../axios/axiosProducts';
 import Spinner from '../UI/Spinner/Spinner';
 import { capitalize, flatNumber } from '../../../helper';
 import { useSelector, useDispatch } from 'react-redux';
@@ -109,6 +108,7 @@ const Products = () => {
           ) : (
             filteredItems
           )}
+          {/* {filteredItems} */}
         </div>
       </div>
     </div>

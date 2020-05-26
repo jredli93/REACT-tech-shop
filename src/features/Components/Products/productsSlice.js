@@ -12,7 +12,7 @@ export const productsSlice = createSlice({
     search: '',
     price: 0,
     maxPrice: 0,
-    loading: true,
+    loading: false,
   },
   reducers: {
     deal: state => {
@@ -59,6 +59,7 @@ export const {
 } = productsSlice.actions;
 
 export const fetchData = () => dispatch => {
+  dispatch(loading());
   axios
     .get('/articles.json')
     .then(res => {

@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import classes from './ProductDetails.module.scss';
 import axios from '../../../axios/axiosProducts';
 import Spinner from '../UI/Spinner/Spinner';
+import { addCartItem } from '../../Containers/Cart/cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const ProductDetails = props => {
   const [product, setProduct] = useState([]);
   const [description, setDescription] = useState([]);
-  const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setLoading(true);
     axios
       .get(`/articles.json?orderBy="_id"&equalTo="${props.match.params.id}"`)
       .then(res => {
         let productKey = Object.keys(res.data)[0];
         setProduct(res.data[productKey]);
         setDescription(res.data[productKey].description);
-        setLoading(false);
       })
       .catch(err => console.log(err));
   }, []);
@@ -40,7 +41,12 @@ const ProductDetails = props => {
           <span>{category}</span>
           <span>{brand}</span>
         </div>
-        <button className={classes.Button}>Add to cart</button>
+        <button
+          onClick={() => dispatch(addCartItem(product))}
+          className={classes.Button}
+        >
+          Add to cart
+        </button>
       </div>
       {product.deal && <span className={classes.Deal}>Deal</span>}
     </div>
