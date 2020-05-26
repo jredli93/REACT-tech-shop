@@ -1,7 +1,7 @@
 ##	Tech store using React.js
  Web shop with product filtering.
- 
- Main technologies: [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png
+ ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+ Main technologies: [logo]: 
  Technologies I used are: React Router, axios and React Hooks, SaSS, Redux Toolkit, Firebase.
 
 ![](React%20App.gif)
